@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aplicación sencilla para crear y organizar notas personales.">
+  <title>Mis notas | Taller UX</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <main class="contenedor">
+    <header class="encabezado">
+      <div class="marca" aria-hidden="true">✎</div>
+      <p class="sobretitulo">ORGANIZA TUS IDEAS</p>
+      <h1>Mis notas</h1>
+      <p class="introduccion">Guarda tus ideas y pendientes en un solo lugar.</p>
+    </header>
+
+    <section class="panel" aria-labelledby="titulo-formulario">
+      <h2 id="titulo-formulario">Crear una nota</h2>
+      <form id="form-nota">
+        <div class="campo">
+          <label for="titulo">Título de la nota</label>
+          <input id="titulo" name="titulo" type="text" maxlength="60"
+                 placeholder="Ej. Tareas pendientes" required>
+        </div>
+        <div class="campo">
+          <label for="contenido">Contenido</label>
+          <textarea id="contenido" name="contenido" rows="4" maxlength="500"
+                    placeholder="Escribe aquí tu idea..." required></textarea>
+        </div>
+        <div class="campo">
+          <label for="categoria">Categoría</label>
+          <select id="categoria" name="categoria">
+            <option value="Personal">Personal</option>
+            <option value="Estudios">Estudios</option>
+            <option value="Trabajo">Trabajo</option>
+          </select>
+        </div>
+        <button class="boton boton-principal" type="submit">Agregar nota</button>
+      </form>
+      <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="notas-seccion" aria-labelledby="titulo-notas">
+      <div class="cabecera-notas">
+        <div>
+          <h2 id="titulo-notas">Tus notas</h2>
+          <p class="texto-suave">Puedes filtrar por categoría.</p>
+        </div>
+        <div class="campo filtro">
+          <label for="filtro">Filtrar</label>
+          <select id="filtro">
+            <option value="Todas">Todas</option>
+            <option value="Personal">Personal</option>
+            <option value="Estudios">Estudios</option>
+            <option value="Trabajo">Trabajo</option>
+          </select>
+        </div>
+      </div>
+      <div id="lista-notas" class="lista-notas">
+        <p id="vacio" class="vacio">Todavía no tienes notas. ¡Agrega la primera!</p>
+      </div>
+    </section>
+    <footer>Las notas se mantienen en esta página mientras esté abierta.</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
